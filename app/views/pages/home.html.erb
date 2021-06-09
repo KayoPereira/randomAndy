@@ -1,0 +1,26 @@
+<div class="container">
+  <button class='btn btn-primary' onclick="btnFunction()">
+    sortear
+  </button>
+
+  <p class='text'></p>
+</div>
+
+<script>
+  const btnFunction = () => {
+    const array = ['Ox', 'Macunaíma', 'Boi e Brasa', 'Sal e brasa', 'AnnieCakes', 'Comer em casa', 'Kayo escolhe', 'Andressa escolhe', 'comida mexicana', 'habbibs de montão hehe', 'capitão gancho'];
+    const btn = document.querySelector('.btn');
+    const text = document.querySelector('.text');
+    const container = document.querySelector('.container');
+
+    window.addEventListener('load', (e) => {
+      container.style.backgroundColor = '#000'
+    });
+
+    btn.addEventListener('click', (e)=>{
+      console.log(`Meu sistema operacional favorito é ${array[Math.floor(Math.random() * array.length)]}!`)
+      btn.disabled = true;
+      text.innerHTML = `A escolha é... ${array[Math.floor(Math.random() * array.length)]}!`
+    });
+  }
+</script>
